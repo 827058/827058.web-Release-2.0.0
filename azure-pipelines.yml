@@ -132,7 +132,7 @@ stages:
             inputs:
               azureSubscription: 'WebApp-ServicePrinciple'
               deployToSlotOrASE: 'true'
-              resourceGroupName: 'tailspin-space-game-rg'
+              resourceGroupName: 'rg-uat'
               slotName: 'swap'
               appName: '$(WebAppNameStaging)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
@@ -140,7 +140,7 @@ stages:
             displayName: 'Swap deployment slots'
             inputs:
               azureSubscription: 'WebApp-ServicePrinciple'
-              resourceGroupName: 'tailspin-space-game-rg'
+              resourceGroupName: 'rg-uat'
               webAppName: '$(WebAppNameStaging)'
               sourceSlot: 'swap'
               targetSlot: 'production'
